@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkMermaidTool=self.webpackChunkMermaidTool||[]).push([[24],{2024:(e,r,c)=>{c.d(r,{createArchitectureServices:()=>a.S});var a=c(8815);c(4846)}}]);
