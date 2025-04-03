@@ -2,11 +2,11 @@ import mermaid from 'mermaid';
 import { nanoid } from 'nanoid';
 import './index.css';
 
-const generateId = (prefix) => {
-  return `${prefix}${nanoid(10)}`;
-}
+export default class {
+  generateId = (prefix) => {
+    return `${prefix}${nanoid(10)}`;
+  }
 
-class MermaidTool {
   static config(config) {
     mermaid.initialize(config);
   }
@@ -31,7 +31,7 @@ class MermaidTool {
   parse(code, preview, container) {
     preview.classList.remove('mermaid-preview-error');
     try {
-      mermaid.render(generateId('svg-'), code, container).then(value => {
+      mermaid.render(this.generateId('svg-'), code, container).then(value => {
         preview.innerHTML = '';
         preview.insertAdjacentHTML('afterbegin', value.svg);
       })
@@ -105,5 +105,3 @@ class MermaidTool {
     }
   }
 }
-
-module.exports = MermaidTool;
